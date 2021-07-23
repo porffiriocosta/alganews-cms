@@ -51,7 +51,7 @@ export const Wrapper = styled.button<{
 }> 
 `
 padding: 6px 8px 4px;
-border: 1px solid ${p => THEME[p.variant].bg}
+border: 1px solid ${p => THEME[p.variant].bg};
 color: ${p => THEME[p.variant].color};
 background-color: ${p => THEME[p.variant].bg};
 &:hover,
