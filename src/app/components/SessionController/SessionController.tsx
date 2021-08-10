@@ -9,7 +9,7 @@ export interface SessionControllerProps {
 
 function SessionController (props: SessionControllerProps) {
   return <SC.Wrapper>
-    <SC.Avatar src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" />
+    <SC.Avatar src="https://s.gravatar.com/avatar/621dcb13abf7166580b95facb16a74e3?d=mm&s=45" />
     <SC.Name>
       { props.name }
     </SC.Name>
