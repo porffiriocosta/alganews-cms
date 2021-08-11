@@ -7,7 +7,7 @@ interface DefaultLayoutProps {
   children: React.ReactNode
 }
 
-function DefaultLayoyt (props: DefaultLayoutProps) {
+function DefaultLayout (props: DefaultLayoutProps) {
   return <DL.Wrapper>
     <DL.Header>
       <Logo />
@@ -29,4 +29,4 @@ function DefaultLayoyt (props: DefaultLayoutProps) {
   </DL.Wrapper>
 }
 
-export default DefaultLayoyt
+export default DefaultLayout
