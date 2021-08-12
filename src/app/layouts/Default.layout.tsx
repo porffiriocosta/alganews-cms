@@ -1,3 +1,5 @@
+import confirm from '../../core/utils/confirm'
+import info from '../../core/utils/info'
 import Logo from '../components/Logo'
 import NavBar from '../components/NavBar'
 import SessionController from '../components/SessionController'
@@ -22,7 +24,20 @@ function DefaultLayout (props: DefaultLayoutProps) {
       <DL.Aside>
         <SessionController
           name="Reginaldo P Costa"
-          description="Analista de Sistemas há 6 anos"
+          description="Analista há 6 anos"
+          onLogout={() => {
+            confirm({
+              title: 'Voce quer delogar?',
+              onConfirm: () => {
+                info({
+                  title: 'Você foi deslogado',
+                  description: 'Você será redirecionado para a página de login'
+                })
+                console.log('executado')
+              },
+              onCancel: () => window.alert('laranja'),
+            })
+          }}
         />
       </DL.Aside>
     </DL.Main>
