@@ -1,3 +1,4 @@
+  
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { User } from "../../sdk/@types";
@@ -18,6 +19,7 @@ export default function EditorsList () {
     {
       editors.map(editor => {
         return <Profile
+          key={editor.id}
           editorId={editor.id}
           name={editor.name}
           description={getEditorDescription(new Date(editor.createdAt))}
