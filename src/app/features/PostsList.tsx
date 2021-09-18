@@ -4,26 +4,37 @@ import { format } from "date-fns"
 import { useState } from "react"
 import { useEffect } from "react"
 import { useMemo } from "react"
-import { Column, useTable } from "react-table"
+import Skeleton from "react-loading-skeleton"
+import { Column, usePagination, useTable } from "react-table"
+import modal from "../../core/utils/modal"
 import { Post } from "../../sdk/@types"
 import PostService from "../../sdk/Services/Post.service"
+import Loading from "../components/Loading"
+import PostTitleAnchor from "../components/PostTitleAnchor"
 import Table from "../components/Table/Table"
+import PostPreview from "./PostPreview"
 
 export default function PostList () {
   const [posts, setPosts] = useState<Post.Paginated>()
   const [error, setError] = useState<Error>()
+  const [page, setPage] = useState(0)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     PostService
       .getAllPosts({
-        page: 0,
+        page,
         size: 7,
         showAll: true,
         sort: ['createdAt', 'desc']
       })
       .then(setPosts)
       .catch(error => setError(new Error(error.message)))
-  }, [])
+      .then(() => {
+        setLoading(false)
+      })
+  }, [page])
 
   if (error)
     throw error
@@ -39,7 +50,13 @@ export default function PostList () {
         Header: () => <div style={{ textAlign: 'left' }}>Título</div>,
         accessor: 'title',
         width: 320,
-        Cell: (props) => <div style={{ textAlign: 'left', display: 'flex', gap: 8, alignItems: 'center' }}>
+        Cell: (props) => <div style={{
+          textAlign: 'left',
+          display: 'flex',
+          gap: 8,
+          alignItems: 'center',
+          maxWidth: 270,
+        }}>
           <img
             width={24}
             height={24}
@@ -47,7 +64,20 @@ export default function PostList () {
             alt={props.row.original.editor.name}
             title={props.row.original.editor.name}
           />
-          {props.value}
+          <PostTitleAnchor
+            title={props.value}
+            href={`/posts/${props.row.original.id}`}
+            onClick={e => {
+              e.preventDefault();
+              modal({
+                children: <PostPreview
+                  postId={props.row.original.id}
+                />
+              })
+            }}
+          >
+            {props.value}
+          </PostTitleAnchor>
         </div>
       },
       {
@@ -88,12 +118,34 @@ export default function PostList () {
     []
   )
 
-  const instance = useTable<Post.Summary>({
-    data: posts?.content || [],
-    columns
-  })
+  const instance = useTable<Post.Summary>(
+    {
+      data: posts?.content || [],
+      columns,
+      manualPagination: true,
+      initialState: { pageIndex: 0 },
+      pageCount: posts?.totalPages
+    },
+    usePagination
+  )
 
-  return <Table
-    instance={instance}
-  />
+  if (!posts)
+    return <div>
+      <Skeleton height={32} />
+      <Skeleton height={40} />
+      <Skeleton height={40} />
+      <Skeleton height={40} />
+      <Skeleton height={40} />
+      <Skeleton height={40} />
+      <Skeleton height={40} />
+      <Skeleton height={40} />
+    </div>
+
+  return <>
+    <Loading show={loading} />
+    <Table
+      instance={instance}
+      onPaginate={setPage}
+    />
+  </>
 }
