@@ -2,7 +2,7 @@ import { mdiUpload } from '@mdi/js'
 import Icon from '@mdi/react'
 import { useEffect } from 'react'
 import { ChangeEvent, useState } from 'react'
-import FileService from '../../../sdk/Services/File.service'
+import {FileService} from 'reginaldo-costa-sdk';
 import Button from '../Button/Button'
 import Loading from '../Loading'
 import * as IU from './ImageUpload.styles'

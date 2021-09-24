@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import withBoundary from "../../core/hoc/withBoundary";
-import { Post } from "../../sdk/@types";
-import PostService from "../../sdk/Services/Post.service";
+
+import {Post, PostService} from 'reginaldo-costa-sdk';
 import Button from '../components/Button/Button';
 import MarkdownEditor from "../components/MarkdownEditor";
 import Loading from '../components/Loading';

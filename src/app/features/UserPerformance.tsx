@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Skeleton from "react-loading-skeleton"
 import withBoundary from "../../core/hoc/withBoundary"
 import transformEditorMonthlyEaningsIntoChartJs from "../../core/utils/transformEditorMonthlyEarningsIntoChartJs"
-import MetricService from "../../sdk/Services/Metric.service"
+import {MetricService} from 'reginaldo-costa-sdk';
 import Chart, { ChartProps } from "../components/Chart/Chart"
 
 function UserPerformance () {

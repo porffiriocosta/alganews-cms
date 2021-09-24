@@ -1,9 +1,7 @@
   
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { User } from "../../sdk/@types";
-import UserService from "../../sdk/Services/User.service";
-import getEditorDescription from "../../sdk/utils/getEditorDescription";
+import {FileService, getEditorDescription, User, UserService} from 'reginaldo-costa-sdk';
 import Profile from "../components/Profile";
 
 export default function EditorsList () {
