@@ -1,35 +1,46 @@
-  
-import { useEffect, useState } from "react";
+import { getEditorDescription } from "reginaldo-costa-sdk";
+import { useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
-import {FileService, getEditorDescription, User, UserService} from 'reginaldo-costa-sdk';
+import useEditors from "../../core/hooks/useEditors";
 import Profile from "../components/Profile";
 
-export default function EditorsList () {
-  const [editors, setEditors] = useState<User.EditorSummary[]>([])
+export default function EditorsList() {
+  const { editorsList, loading, fetchAllEditors } = useEditors();
 
   useEffect(() => {
-    UserService
-      .getAllEditors()
-      .then(setEditors)
-  }, [])
+    fetchAllEditors();
+  }, [fetchAllEditors]);
 
-  return <EditorsListWrapper>
-    {
-      editors.map(editor => {
-        return <Profile
-          key={editor.id}
-          editorId={editor.id}
-          name={editor.name}
-          description={getEditorDescription(new Date(editor.createdAt))}
-          avatarUrl={editor.avatarUrls.small}
-        />
-      })
-    }
-  </EditorsListWrapper>
+  if (!editorsList.length)
+    return (
+      <EditorsListWrapper>
+        <Skeleton height={82} />
+        <Skeleton height={82} />
+        <Skeleton height={82} />
+      </EditorsListWrapper>
+    );
+
+  return (
+    <EditorsListWrapper>
+      {editorsList.map((editor) => {
+        return (
+          <Profile
+            key={editor.id}
+            editorId={editor.id}
+            name={editor.name}
+            description={getEditorDescription(new Date(editor.createdAt))}
+            avatarUrl={editor.avatarUrls.small}
+          />
+        );
+      })}
+      {loading ? "buscando mais informações" : null}
+    </EditorsListWrapper>
+  );
 }
 
 const EditorsListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-`
+`;
