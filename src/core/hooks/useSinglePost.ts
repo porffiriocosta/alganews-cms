@@ -1,4 +1,4 @@
-import { Post, PostService } from "reginaldo-costa-sdk";
+import { Post, PostService } from "danielbonifacio-sdk";
 import { useCallback, useState } from "react";
 import info from "../utils/info";
 

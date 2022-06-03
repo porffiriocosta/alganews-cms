@@ -7,6 +7,7 @@ export default styled.a`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+
   &:hover,
   &:focus {
     color: #09f;

@@ -1,4 +1,3 @@
-  
 import * as P from './Profile.styles'
 
 export interface ProfileProps {

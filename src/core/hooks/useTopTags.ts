@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { Metric, MetricService } from "reginaldo-costa-sdk";
+import { Metric, MetricService } from "danielbonifacio-sdk";
 
 export default function useTopTags() {
   const [topTags, setTopTags] = useState<Metric.EditorTagRatio>([]);

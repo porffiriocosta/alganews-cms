@@ -6,13 +6,17 @@ export const LoadingWrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+
   background-color: rgba(0,0,0,.7);
   z-index: 99;
+
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(5px);
+
   animation: .25s pop ease;
+
   @keyframes pop {
     from {
       background-color: rgba(0,0,0,.0);
@@ -22,6 +26,8 @@ export const LoadingWrapper = styled.div`
       opacity: 1;
     }
   }
+
+
   .lds-ring {
     display: inline-block;
     position: relative;
@@ -57,4 +63,5 @@ export const LoadingWrapper = styled.div`
       transform: rotate(360deg);
     }
   }
+
 `

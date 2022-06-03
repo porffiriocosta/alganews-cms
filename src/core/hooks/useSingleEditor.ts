@@ -1,4 +1,4 @@
-import { User, UserService } from "reginaldo-costa-sdk";
+import { User, UserService } from "danielbonifacio-sdk";
 import { useCallback, useState } from "react";
 
 export default function useSingleEditor() {

@@ -6,7 +6,7 @@ import {
   isPending,
   isRejected,
 } from "@reduxjs/toolkit";
-import { Post, PostService } from "reginaldo-costa-sdk";
+import { Post, PostService } from "danielbonifacio-sdk";
 
 interface PostSliceState {
   paginated?: Post.Paginated;

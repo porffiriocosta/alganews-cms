@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { User, UserService } from "reginaldo-costa-sdk";
+import { User, UserService } from "danielbonifacio-sdk";
 
 export default function useUser() {
   const [user, setUser] = useState<User.Detailed>();

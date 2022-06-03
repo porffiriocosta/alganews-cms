@@ -1,4 +1,4 @@
-import DefaultLayout from '../layouts/Default.layout'
+import DefaultLayout from '../layouts/Default'
 import usePageTitle from '../../core/hooks/usePageTitle'
 import PostForm from '../features/PostForm'
 import { useParams } from 'react-router-dom'

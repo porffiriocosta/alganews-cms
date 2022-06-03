@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
     gap: 16px;
     flex-wrap: wrap;
   }
+
   .ReactTags__tag {
     background-color: #09f;
     color: #fff;
@@ -13,6 +14,7 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
   }
+
   .ReactTags__remove {
     width: 24px;
     height: 1em;
@@ -21,10 +23,12 @@ export const Wrapper = styled.div`
     background-color: transparent;
     cursor: pointer;
     font-size: 1em;
+
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .ReactTags__tagInput {
     flex-grow: 1;
   }

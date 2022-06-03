@@ -21,11 +21,14 @@ const List = styled.ul`
 const Item = styled.li`
   text-transform: lowercase;
   font-size: 18px;
+
   a {
     text-decoration: none;
     color: #274060;
+
     &.active {
       color: #09f;
     }
   }
 `
+

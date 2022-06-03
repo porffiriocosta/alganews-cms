@@ -1,4 +1,4 @@
-import { PostService } from "reginaldo-costa-sdk";
+import { PostService } from "danielbonifacio-sdk";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";

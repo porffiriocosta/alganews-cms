@@ -1,4 +1,4 @@
-import { getEditorDescription } from "reginaldo-costa-sdk";
+import { getEditorDescription } from "danielbonifacio-sdk";
 import { useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import styled from "styled-components";
@@ -34,7 +34,6 @@ export default function EditorsList() {
           />
         );
       })}
-      {loading ? "buscando mais informações" : null}
     </EditorsListWrapper>
   );
 }

@@ -1,4 +1,4 @@
-import { Post } from "reginaldo-costa-sdk";
+import { Post } from "danielbonifacio-sdk";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import selectPaginatedPosts from "../selectors/selectPaginatedPosts";

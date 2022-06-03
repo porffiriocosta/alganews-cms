@@ -1,4 +1,3 @@
-  
 import * as FD from './FieldDescriptor.styles'
 
 export interface FieldDescriptorProps {

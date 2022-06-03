@@ -1,4 +1,4 @@
-import { MetricService } from "reginaldo-costa-sdk";
+import { MetricService } from "danielbonifacio-sdk";
 import { useCallback, useState } from "react";
 import { ChartProps } from "../../app/components/Chart/Chart";
 import transformEditorMonthlyEaningsIntoChartJs from "../utils/transformEditorMonthlyEarningsIntoChartJs";

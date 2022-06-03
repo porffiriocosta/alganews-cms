@@ -1,21 +1,23 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import Button, {ButtonProps} from '../app/components/Button/Button';
+import { Story, Meta } from '@storybook/react';
+import Button, { ButtonProps } from '../app/components/Button/Button';
 
 export default {
   title: 'Example/Button',
   component: Button,
-} as ComponentMeta<typeof Button>;
+  // argTypes: {
+  //   backgroundColor: { control: 'color' },
+  // },
+} as Meta;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
   label: 'resetar senha',
 };
-
 export const Danger = Template.bind({});
+
 Danger.args = {
   variant: 'danger',
   label: 'resetar senha',

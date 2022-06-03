@@ -48,15 +48,19 @@ export const Wrapper = styled.button<{
 }>`
   padding: 6px 8px 4px;
   border: 1px solid ${p => THEME[p.variant].bg};
+
   color: ${p => THEME[p.variant].color};
   background-color: ${p => THEME[p.variant].bg};
+
   &:hover,
   &:focus {
     ${p => THEME[p.variant].onHover};
   }
+
   &:disabled {
     background-color: ${p => THEME[p.variant].disabled.bg};
     color: ${p => THEME[p.variant].disabled.color};
+
     pointer-events: none;
     border-color: transparent;
     opacity: 0.5;

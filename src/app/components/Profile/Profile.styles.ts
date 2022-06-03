@@ -4,10 +4,14 @@ import styled from 'styled-components'
 export const Wrapper = styled(Link)`
   display: flex;
   gap: 24px;
+
   border: 1px solid #ccc;
   padding: 16px;
+
   cursor: pointer;
+
   transition: box-shadow .15s ease;
+
   text-decoration: none;
   color: #274060;
   

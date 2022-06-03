@@ -20,10 +20,10 @@ function UserPerformance() {
 
   return (
     <Chart
-      title="Média de performance nos últimos 12 meses"
+      title={`Média de performance nos últimos ${performance.labels?.length} meses`}
       data={performance}
     />
   );
 }
 
-export default withBoundary(UserPerformance, 'Componente')
+export default withBoundary(UserPerformance, "Batata");
